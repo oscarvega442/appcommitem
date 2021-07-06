@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       var datauser = json.decode(response.body);
       print(datauser);
-      if (datauser.length == 0) {
+      if (datauser[0] == 0) {
         Fluttertoast.showToast(
             msg: "Usuario no valido",
             toastLength: Toast.LENGTH_LONG,

@@ -15,7 +15,6 @@ String correo = '';
 String nombrecompleto = '';
 String tipoUsuario = '';
 
-
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController email = new TextEditingController();
   TextEditingController pass = new TextEditingController();
@@ -23,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<List> _login() async {
     print(email.text);
     print(pass.text);
-    var datauser ;
+    var datauser;
 
     if (email.text != "" && pass.text != "") {
       final response = await http.post(
@@ -35,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       var datauser = json.decode(response.body);
       print(datauser);
-      if (datauser[0] == 0) {
+      if (response.body.contains("0")) {
         Fluttertoast.showToast(
             msg: "Usuario no valido",
             toastLength: Toast.LENGTH_LONG,

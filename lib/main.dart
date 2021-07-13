@@ -1,7 +1,12 @@
 import 'package:commitem_proyect/pages/AdminPage.dart';
 import 'package:commitem_proyect/pages/CoordinadorPage.dart';
 import 'package:commitem_proyect/pages/EstudiantePage.dart';
+import 'package:commitem_proyect/pages/ProfesorList.dart';
 import 'package:commitem_proyect/pages/ProfesorPage.dart';
+import 'package:commitem_proyect/pages/ProfesorRegister.dart';
+import 'package:commitem_proyect/pages/ProyectoList.dart';
+import 'package:commitem_proyect/pages/ProyectoRegister.dart';
+
 import 'package:flutter/material.dart';
 import 'package:commitem_proyect/pages/login_screen.dart';
 
@@ -15,10 +20,14 @@ class MyApp extends StatelessWidget {
       title: 'Commitem',
       home: LoginScreen(),
       routes: <String, WidgetBuilder>{
-        '/AdminPage': (BuildContext context) => new Admin(),
-        '/EstudiantePage': (BuildContext context) => new Estudiante(),
-        '/CoordinadorPage': (BuildContext context) => new Coordinador(),
-        '/ProfesorPage': (BuildContext context) => new Profesor(),
+        '/ProyectoList': (BuildContext context) => ProyectoList(),
+        '/ProyectoRegister': (BuildContext context) => ProyectoRegister(),
+        '/ProfesorList': (BuildContext context) => ProfesorList(),
+        '/ProfesorRegister': (BuildContext context) =>  ProfesorRegister(),
+        '/AdminPage': (BuildContext context) =>  Admin(),
+        '/EstudiantePage': (BuildContext context) =>  Estudiante(),
+        '/CoordinadorPage': (BuildContext context) =>  Coordinador(),
+        '/ProfesorPage': (BuildContext context) =>  Profesor(),
         '/loginPage': (BuildContext context) => LoginScreen(),
       },
     );

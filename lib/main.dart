@@ -2,11 +2,11 @@ import 'package:commitem_proyect/pages/Actividades.dart';
 import 'package:commitem_proyect/pages/AdminPage.dart';
 import 'package:commitem_proyect/pages/CoordinadorPage.dart';
 import 'package:commitem_proyect/pages/EstudiantePage.dart';
-<<<<<<< HEAD
+
 import 'package:commitem_proyect/pages/InsertarActividad.dart';
-=======
+
 import 'package:commitem_proyect/pages/ProfesorList.dart';
->>>>>>> 7d11193355470241a8534cc4fe12c1d3e8a1627f
+
 import 'package:commitem_proyect/pages/ProfesorPage.dart';
 import 'package:commitem_proyect/pages/ProfesorRegister.dart';
 import 'package:commitem_proyect/pages/ProyectoList.dart';

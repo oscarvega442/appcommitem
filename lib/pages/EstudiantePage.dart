@@ -67,6 +67,20 @@ class _EstudianteState extends State<Estudiante> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Estudiante"),
+        actions: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: IconButton(
+                icon: Icon(
+                  Icons.exit_to_app,
+                  size: 20,
+                ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginPage');
+                }),
+          ),
+        ],
+        backgroundColor: Colors.blue,
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -91,12 +105,7 @@ class _EstudianteState extends State<Estudiante> {
               fontSize: 20.0,
               fontWeight: FontWeight.bold
             ),),),
-          FloatingActionButton(
-            child: Icon(Icons.backspace),
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/loginPage');
-            },
-          )
+          
         ]),
       ),
     );

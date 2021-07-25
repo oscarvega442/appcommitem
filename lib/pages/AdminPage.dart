@@ -7,71 +7,34 @@ import 'package:flutter/foundation.dart';
 class Admin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: <Widget>[
-            Container(
-              height: 180,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Colors.blue.shade300, Colors.blue.shade100])),
-            ),
-            Positioned(
-              top: 0,
-              right: 0,
-              left: 0,
-              child: Container(
-                height: 80,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40, left: 20),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.dehaze,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: Text(
-                        'Commitem',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40, right: 20),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.edit,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-                  ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Commitem'),
+        actions: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: IconButton(
+                icon: Icon(
+                  Icons.exit_to_app,
+                  size: 20,
                 ),
-              ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/loginPage');
+                }),
+          ),
+        ],
+        backgroundColor: Colors.blue,
+      ),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            child: ListView(
+              children: <Widget>[
+                new CardHolder(),
+              ],
             ),
-            Container(
-              child: ListView(
-                children: <Widget>[
-                  new CardHolder(),
-                  SizedBox(
-                    height: 200,
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -85,8 +48,8 @@ class CardHolder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 150, right: 20, left: 20),
-      height: 600,
+      margin: EdgeInsets.only(top: 90, right: 20, left: 20),
+      height: 469,
       width: 400,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -166,8 +129,8 @@ class Card extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(top: 30),
           padding: EdgeInsets.only(left: 20, right: 20, top: 8),
-          width: 320,
-          height: 200,
+          width: 330,
+          height: 220,
           decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -187,19 +150,30 @@ class Card extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'website',
+                        'Actualizar datos',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.blue,
                           fontSize: 18,
                         ),
                       ),
                       SizedBox(
-                        height: 3,
+                        height: 35,
                       ),
                       Text(
-                        'www.google.com',
+                        'Registro coordiadores',
                         style: TextStyle(
                           color: Colors.blue,
+                          fontSize: 18,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 35,
+                      ),
+                      Text(
+                        'Eliminar coordinador',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 18,
                         ),
                       )
                     ],
@@ -213,118 +187,48 @@ class Card extends StatelessWidget {
                         children: <Widget>[
                           IconButton(
                               icon: Icon(
-                                Icons.headset,
-                                size: 15,
+                                Icons.person_add_alt,
+                                size: 20,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/ActualizarDatos');
+                              }),
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
                           IconButton(
                               icon: Icon(
-                                Icons.headset,
-                                size: 15,
+                                Icons.post_add,
+                                size: 20,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/RegistroCoordinador');
+                              }),
                         ],
-                      )
+                      ),
+                      Row(
+                        children: <Widget>[
+                          IconButton(
+                              icon: Icon(
+                                Icons.view_list,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/EliminarCoordinador');
+                              }),
+                        ],
+                      ),
                     ],
                   )
                 ],
               ),
-              Text(
-                'Biography',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                ),
-              ),
-              SizedBox(
-                height: 3,
-              ),
-              Text(
-                  'Contrary to popular belief, Lorem Ipsum is not simply random text It has roots in a piece of classical Latin literature from 45 BC')
             ],
           ),
         ),
-        Column(
-          children: <Widget>[
-            SizedBox(
-              height: 30,
-            ),
-            SizedBox(
-              width: 300,
-              child: Divider(
-                height: 1,
-                color: Colors.blue.shade300.withOpacity(.3),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                Material(
-                  borderRadius: BorderRadius.all(Radius.circular(100)),
-                  child: InkWell(
-                    borderRadius: BorderRadius.all(Radius.circular(100)),
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Icon(
-                        Icons.group_work,
-                        color: Colors.blue.shade300,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  children: <Widget>[
-                    Text(
-                      'Dirbble',
-                      style: TextStyle(color: Colors.black, fontSize: 22),
-                    ),
-                    Text(
-                      '.com/raazcse',
-                      style:
-                          TextStyle(color: Colors.blue.shade300, fontSize: 15),
-                    )
-                  ],
-                ),
-                Spacer(),
-                Material(
-                  borderRadius: BorderRadius.all(Radius.circular(100)),
-                  child: InkWell(
-                    borderRadius: BorderRadius.all(Radius.circular(100)),
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Icon(
-                        Icons.insert_emoticon,
-                        color: Colors.blue.shade300,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  children: <Widget>[
-                    Text(
-                      'Behance',
-                      style: TextStyle(color: Colors.black, fontSize: 22),
-                    ),
-                    Text(
-                      '.net/surjasin',
-                      style:
-                          TextStyle(color: Colors.blue.shade300, fontSize: 15),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 14,
-                )
-              ],
-            )
-          ],
-        )
       ],
     );
   }

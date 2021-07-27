@@ -60,8 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
           Navigator.pushReplacementNamed(context, '/ProfesorPage');
         }
         setState(() {
-          correo = datauser[0]['correo'];
-          nombrecompleto = datauser[0]['nombrecompleto'];
+          correo = datauser[0]['Correo'];
+          nombrecompleto = datauser[0]['NombreCompleto'];
           tipoUsuario = datauser[0]['user_tipo'];
         });
       }

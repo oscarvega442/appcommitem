@@ -119,7 +119,7 @@ class _ListPageState extends State<EliminarCoordinador> {
                               ),
                             ),
                             Text(
-                              datauser[index]['correo'],
+                              datauser[index]['Correo'],
                               //'Note Text',
                               style: TextStyle(color: Colors.grey.shade600),
                             ),

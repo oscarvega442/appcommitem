@@ -75,9 +75,9 @@ class _SignUpPageState extends State<ActualizarDatos> {
       print(response.body);
       datalist = json.decode(response.body);
     });
-    nameController.text = datalist[0]['superAdmin_nombre'];
-    apellido1Controller.text = datalist[0]['superAdmin_apellido1'];
-    apellido2Controller.text = datalist[0]['superAdmin_apellido2'];
+    nameController.text = datalist[0]['superadmin_nombre'];
+    apellido1Controller.text = datalist[0]['superadmin_apellido1'];
+    apellido2Controller.text = datalist[0]['superadmin_apellido2'];
     return datalist;
   }
 
